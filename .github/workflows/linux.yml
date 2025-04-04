@@ -47,7 +47,7 @@ jobs:
             echo "ARTIFACT_NAME=Telegram" >> $GITHUB_ENV
           fi
 
-          docker run --rm -it \
+          docker run --rm \
             -u $(id -u) \
             -v "$PWD:/usr/src/tdesktop" \
             tdesktop:centos_env \
