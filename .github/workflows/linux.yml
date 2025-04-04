@@ -57,7 +57,7 @@ jobs:
 
       - name: Check.
         run: |
-          ls -l $REPO_NAME/out/
+          ls -l $REPO_NAME/out/Release
           filePath="$REPO_NAME/out/Release/Telegram"
           if test -f "$filePath"; then
             echo "Build successfully done! :)"
@@ -74,7 +74,7 @@ jobs:
         run: |
           cd $REPO_NAME/out/Release
           mkdir artifact
-          mv {Telegram,Updater} artifact/
+          mv Telegram artifact/
       - uses: actions/upload-artifact@v4
         if: env.UPLOAD_ARTIFACT == 'true'
         name: Upload artifact.
